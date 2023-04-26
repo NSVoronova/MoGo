@@ -74,8 +74,13 @@
   box-sizing: border-box;
 }
 
+input:focus {
+  outline: none;
+}
+
 body {
   background-color: #FFFFFF;
+
   .wrapper {
     overflow-x: hidden;
   }
@@ -157,14 +162,20 @@ $seawave_color: #95E1D3;
   width: 100%;
 }
 
-// css main_bunner
+// css main_bunner ----------------------------------------------
+.main_logo {
+  cursor: pointer;
+}
+
 .burger_menu {
   display: none;
 }
 
-#burger, [for=burger]{
+#burger,
+[for=burger] {
   display: none;
 }
+
 .main_bunner {
   position: relative;
   max-width: 100%;
@@ -237,6 +248,7 @@ $seawave_color: #95E1D3;
         &:hover {
           border-bottom: 1px solid #F4BF87;
           color: #F4BF87;
+          transition: all 0.3s ease-out;
         }
       }
     }
@@ -274,6 +286,7 @@ $seawave_color: #95E1D3;
         cursor: pointer;
         background-color: #FFFFFF;
         color: #E4BE8D;
+        transition: all 0.5s ease-out;
       }
 
       &:active {
@@ -292,6 +305,11 @@ $seawave_color: #95E1D3;
       height: 85px;
       border-top: 4px solid #FFFFFF;
       padding-top: 1em;
+      cursor: pointer;
+
+      &:first-child {
+        border-top: 4px solid #F38281;
+      }
 
       p {
         font-family: 'Raleway', sans-serif;
@@ -309,7 +327,8 @@ $seawave_color: #95E1D3;
   }
 }
 
-.about_page {
+// css-правила about_team_page ---------------------------------------
+.about_team_page {
   @extend %start_style;
   max-width: 1170px;
   text-align: center;
@@ -333,7 +352,8 @@ $seawave_color: #95E1D3;
   width: 100%;
   height: 100%;
   overflow: hidden;
-  background-color: #95E1D3;
+
+  cursor: pointer;
 
   img {
     display: block;
@@ -343,9 +363,13 @@ $seawave_color: #95E1D3;
   }
 }
 
-.team_image:hover {
-  .team_pic {
-    display: none;
+@media (min-width: 1024px) {
+  .team_image:hover {
+    background-color: #95E1D3;
+
+    .team_pic {
+      display: none;
+    }
   }
 }
 
@@ -366,7 +390,7 @@ $seawave_color: #95E1D3;
   opacity: 1;
   z-index: 3;
   width: 100%;
-  height: 100%;
+  transition: all 0.3s ease-out;
 }
 
 .overlay_content {
@@ -393,6 +417,7 @@ $seawave_color: #95E1D3;
   }
 }
 
+// css-правила для futures_page -----------------------------------------
 .futures_page {
   width: 100%;
   background-color: #95E1D3;
@@ -427,6 +452,7 @@ $seawave_color: #95E1D3;
   }
 }
 
+// css-правила для amazing_page ----------------------------------------
 .amazing_page {
   @extend %start_style;
   max-width: 1170px;
@@ -472,6 +498,7 @@ $seawave_color: #95E1D3;
   }
 }
 
+// css-правила для container_devices -------------------------------------
 .container_devices {
   position: relative;
 }
@@ -479,7 +506,6 @@ $seawave_color: #95E1D3;
 .devices_page {
   @extend %start_style;
   width: 100%;
-  // min-height: 868px;
   background-image: url(../images/devices.jpg);
   background-position: 0% 40%;
   background-size: cover;
@@ -515,6 +541,7 @@ $seawave_color: #95E1D3;
       background-position: center;
       display: flex;
       justify-content: center;
+
       img {
         width: 670px;
         margin: 59px 0px 57px;
@@ -530,6 +557,8 @@ $seawave_color: #95E1D3;
     }
   }
 }
+
+// css-правила для service_page -----------------------------------
 
 .service_page {
   @extend %start_style;
@@ -566,6 +595,7 @@ $seawave_color: #95E1D3;
 
   .drop_item {
     border: 1px solid #C6CBCD;
+
     [class^="icon-"]::before,
     [class*=" icon-"]::before {
       position: absolute;
@@ -642,6 +672,7 @@ $seawave_color: #95E1D3;
 
 .drop_input:checked~.drop_title img {
   transform: rotate(180deg);
+  transition: all 0.5s ease-out;
 }
 
 .drop {
@@ -653,6 +684,7 @@ $seawave_color: #95E1D3;
   }
 }
 
+// css-правила для reviews_page --------------------------------------
 .reviews_page {
   width: 100%;
   background-color: #F8F8F8;
@@ -677,6 +709,7 @@ $seawave_color: #95E1D3;
 
   div {
     margin-left: 22px;
+
     .slider_dots {
       display: none;
     }
@@ -710,6 +743,7 @@ $seawave_color: #95E1D3;
   }
 }
 
+// css-правила для about_page -------------------------------------
 .about_page {
   @extend %start_style;
   max-width: 1170px;
@@ -783,14 +817,17 @@ $seawave_color: #95E1D3;
 }
 
 .about_overlay_content {
+  display: flex;
+  justify-content: center;
   margin: 55% auto;
+
   [class^="icon-"]::before,
   [class*=" icon-"]::before {
     cursor: pointer;
     font-size: 42px;
     color: #F38281;
     background-color: #F9EFCF;
-    margin: -1px;
+    margin: 2px;
   }
 
   [class^="icon-"]:hover::before,
@@ -800,6 +837,7 @@ $seawave_color: #95E1D3;
   }
 }
 
+// css-правила для partners_page -------------------------------------
 .partners_page {
   width: 100%;
   background-color: #F8F8F8;
@@ -811,11 +849,17 @@ $seawave_color: #95E1D3;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    cursor: pointer;
 
-    
+    .partner:hover {
+
+      transform: scale(1.5, 1.5);
+      transition: all 0.5s ease-out;
+    }
   }
 }
 
+// css-правила для work_page ------------------------------------------
 .work_page {
   @extend %start_style;
   max-width: 1170px;
@@ -843,6 +887,7 @@ $seawave_color: #95E1D3;
   .wide {
     grid-row: span 2;
     height: calc(378px*2);
+
     img {
       height: 100%;
     }
@@ -899,6 +944,7 @@ $seawave_color: #95E1D3;
   opacity: 2;
 }
 
+// css-правила repeated ----------------------------------------------
 .repeated {
   background-color: #FFFFFF;
   margin: 84px 0;
@@ -910,6 +956,7 @@ $seawave_color: #95E1D3;
   border-radius: 50%;
 }
 
+// css-правила для happy_wrapper ------------------------------------
 .happy_wrapper {
   position: relative;
   width: 100%;
@@ -941,10 +988,12 @@ $seawave_color: #95E1D3;
     flex-wrap: wrap;
     justify-content: space-between;
     margin-top: 42px;
+
     .client_description {
       display: flex;
       align-items: center;
       width: 550px;
+
       img {
         width: 130px;
         height: 130px;
@@ -986,10 +1035,11 @@ $seawave_color: #95E1D3;
   }
 }
 
+// css-правила для stories_page -------------------------------------
 .stories_page {
   @extend %start_style;
   max-width: 1170px;
-  margin: 0 auto;
+  margin: 0 auto 84px;
 
   .stories_group {
     display: flex;
@@ -1074,6 +1124,7 @@ $seawave_color: #95E1D3;
   }
 }
 
+// css-правила для map_wrapper --------------------------------------
 .map_wrapper {
   position: relative;
   content: '';
@@ -1108,6 +1159,7 @@ $seawave_color: #95E1D3;
   }
 }
 
+// css-правила для footer ----------------------------------------------
 footer {
   width: 100%;
   background-color: #F8F8F8;
@@ -1321,7 +1373,9 @@ footer {
   border-top: 1px solid #C6CBCD;
 }
 
-// media-запросы 
+// media-запросы ////////////////////////////////////////////////////
+
+
 @media (max-width: 1024px) {
   .wrapper {
     max-width: 1024px;
@@ -1330,16 +1384,19 @@ footer {
   %raleway_700 {
     font-size: 18px;
   }
+
   .main_bunner {
     .main_text {
       h2 {
         font-size: 48px;
       }
+
       h1 {
         font-size: 96px;
       }
     }
   }
+
   h2 {
     font-size: 24px;
   }
@@ -1353,6 +1410,7 @@ footer {
 
   .main_bunner,
   .about_page,
+  .about_team_page,
   .services,
   .service_page,
   .reviews_page,
@@ -1366,6 +1424,7 @@ footer {
   .team {
     height: 283px;
   }
+
   .future {
     height: 166px;
 
@@ -1376,6 +1435,7 @@ footer {
   }
 
   .about_page,
+  .about_team_page,
   .amazing_page,
   .service_page,
   .devices_page,
@@ -1384,11 +1444,11 @@ footer {
   .stories_page,
   .map_page {
 
-     %start_style
-    h2,
+    %start_style h2,
     h4 {
       font-size: 24px;
     }
+
     h2 {
       margin-top: 0;
     }
@@ -1403,14 +1463,17 @@ footer {
     }
 
   }
+
   .devices_page {
     .devices_content {
       .device_tablet {
         width: 447px;
+
         img {
           margin: 40px 0px 38px;
         }
       }
+
       .device_mobile {
         img {
           width: 135px;
@@ -1584,6 +1647,7 @@ footer {
       }
 
       div {
+
         [class^="icon-"]::before,
         [class*=" icon-"]::before {
           font-size: 16px;
@@ -1652,10 +1716,13 @@ footer {
       }
     }
   }
+
   .review_main {
     margin: 0 20px;
   }
 }
+
+// ///////////////////////////////////////////////////////////////
 
 @media (max-width: 800px) {
   [for=burger] {
@@ -1691,9 +1758,11 @@ footer {
     width: 100vw;
     height: 574px;
     transform: scale(-1, 1);
+
     .hidden {
       opacity: 0;
     }
+
     &::before {
       content: '';
       position: absolute;
@@ -1709,150 +1778,25 @@ footer {
 
   nav {
     position: fixed;
-  }
-  
 
-  a {
-    transform: scale(-1, 1);
+    a {
+      transform: scale(-1, 1);
+    }
   }
-  
+
   .main_bunner {
     header {
       nav {
         display: none;
         position: absolute;
-       }
-       .menu {
+      }
+
+      .menu {
         position: fixed;
-       }
-    }
-  }
-  .services {
-    display: flex;
-    justify-content: center;
-    .amazing_direction {
-      max-width: 289px;
-    }
-  }
-  .service_drop-down {
-    margin-left: 20px;
-  }
-  .drop {
-    margin-top: 15px;
-  }
-  .happy_clients_page {
-    .clients {
-      .client_description {
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-        text-align: center;
-        img {
-          margin-top: 0;
-          width: 88px;
-          height: 88px;
-          margin-bottom: 21px;
-        }
       }
     }
   }
-  .client_text {
-    margin-left: 0;
-    .happy_text {
-      height: auto;
-    }
-    .divider {
-      margin: auto;
-      width: 134px;
-      height: 21px;
-    }
-  }
-  .stories_page {
-    padding: 0 16px;
-    .stories_group {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-  }
-  .footer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  .contacts_footer {
-    text-align: center;
-    width: 100%;
-    .form_footer {
-      display: flex;
-      justify-content: center;
-    }
-  }
-  .blogs_footer {
-    width: 100%;
-  }
-  .blogs_footer,
-  .instagram_footer {
-    div:first-child {
-     text-align: center;
-    }
-  }
-  .blog {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    .blog_text {
-      .blog_txt {
-        text-align: left;
-      }
-    }
-  }
-}
-  
 
-
-
-
-@media (max-width:550px) {
-  %start_style {
-    h2 {
-      margin-top: 29px;
-    }
-  }
-  .main_bunner {
-    .main_text {
-      h1 {
-        font-size: 48px;
-        line-height: normal;
-      }
-      .divider {
-        width: 134px;
-      }
-    }
-    header {
-      height: 56px;
-      margin-bottom: 34px;
-      .main_logo {
-       img {
-        height: 14px;
-       }
-      }
-    }
-  }
-  .about_page {
-    .about_teams {
-      display: flex;
-      flex-direction: column;
-      &:last-child {
-        margin-bottom: 59px;
-      }
-    }
-  }
-  .team {
-    width: 100%;
-    height: 400px;
-    margin-bottom: 16px;
-  }
   .image_overlay {
     position: absolute;
     top: 67%;
@@ -1862,95 +1806,276 @@ footer {
     height: 33%;
     opacity: 2;
   }
+
   .overlay_content {
     display: flex;
     justify-content: flex-start;
     text-align: left;
     bottom: 20px;
+
     img {
       margin: 20px;
     }
   }
+
+  .services {
+    display: flex;
+    justify-content: center;
+
+    .amazing_direction {
+      max-width: 289px;
+    }
+  }
+
+  .service_drop-down {
+    margin-left: 20px;
+  }
+
+  .drop {
+    margin-top: 15px;
+  }
+
+  .happy_clients_page {
+    .clients {
+      .client_description {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+
+        img {
+          margin-top: 0;
+          width: 88px;
+          height: 88px;
+          margin-bottom: 21px;
+        }
+      }
+    }
+  }
+
+  .client_text {
+    margin-left: 0;
+
+    .happy_text {
+      height: auto;
+    }
+
+    .divider {
+      margin: auto;
+      width: 134px;
+      height: 21px;
+    }
+  }
+
+  .stories_page {
+    padding: 0 16px;
+    margin-bottom: 25px;
+
+    .stories_group {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
+  .footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .contacts_footer {
+    text-align: center;
+    width: 100%;
+
+    .form_footer {
+      display: flex;
+      justify-content: center;
+    }
+  }
+
+  .blogs_footer {
+    width: 100%;
+  }
+
+  .blogs_footer,
+  .instagram_footer {
+    div:first-child {
+      text-align: center;
+    }
+  }
+
+  .blog {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+    .blog_text {
+      .blog_txt {
+        text-align: left;
+      }
+    }
+  }
+}
+
+
+
+// ///////////////////////////////////////////////////////////////////
+
+@media (max-width:550px) {
+  %start_style {
+    h2 {
+      margin-top: 29px;
+    }
+  }
+
+  .main_bunner {
+    .main_text {
+      h1 {
+        font-size: 48px;
+        line-height: normal;
+      }
+
+      .divider {
+        width: 134px;
+      }
+    }
+
+    header {
+      height: 56px;
+      margin-bottom: 34px;
+
+      .main_logo {
+        img {
+          height: 14px;
+        }
+      }
+    }
+  }
+
+  .about_team_page {
+    .about_teams {
+      display: flex;
+      flex-direction: column;
+
+      &:last-child {
+        margin-bottom: 59px;
+      }
+    }
+  }
+
+  .team {
+    width: 100%;
+    height: 400px;
+    margin-bottom: 16px;
+  }
+
+
+
   .futures_page {
     .futures_container {
       width: 100%;
       display: flex;
       flex-wrap: wrap;
+
       .future {
         width: 144px;
         border-right: none;
         border-left: none;
         border-bottom: 1px solid #FFFFFF;
       }
-      
+
     }
   }
+
   .devices_page {
     .devices_content {
       .device_tablet {
         width: 286px;
+
         img {
           margin: 36px 0px 25px;
         }
       }
+
       .device_mobile {
         margin-right: 0;
         bottom: -20px;
+
         img {
           width: 85px;
         }
       }
     }
   }
+
   .service_page {
     .service_main {
       display: flex;
       flex-direction: column;
       margin-bottom: 31px;
+
       .service_pic {
         width: 100%;
         height: 235px;
+
         img {
           margin-top: -50%;
         }
       }
     }
   }
+
   .service_drop-down {
     width: 100%;
     margin-left: 0;
     margin-top: 30px;
   }
+
   .reviews_page {
     .reviews {
       .arrow_down {
         img {
-        display: none;
+          display: none;
         }
       }
     }
   }
+
+  .review_main .review_data h2 {
+    font-size: 18px;
+    margin-left: 28px;
+  }
+
   .review_main {
     img {
       display: none;
     }
+
     div {
       .slider_dots {
         margin: 10px auto 20px;
         width: 130px;
         display: flex;
         justify-content: space-between;
+
         img {
           display: block;
           width: 9.5px;
           height: 9.5px;
+
+          &:hover {
+            cursor: pointer;
+          }
         }
       }
     }
   }
+
   .about_img {
     height: 355px;
   }
+
   .about_page {
     .about_group {
       display: flex;
@@ -1958,10 +2083,11 @@ footer {
       margin: 18px 0 57px;
     }
   }
-  
+
   .about_lead:nth-child(2) {
     margin: 30px 0px;
   }
+
   .about_overlay {
     max-width: 318px;
     max-height: 100%;
@@ -1971,25 +2097,30 @@ footer {
     transform: none;
     left: 50%;
     transform: translateX(-50%);
+
     .about_overlay_content {
-      margin-right: 50%;
       opacity: 2;
       width: 100%;
       height: 42px;
       margin: 98.5% 0 0 23%;
     }
   }
+
   .partners_page {
     padding: 0px 0;
+
     .partner_container {
       display: flex;
       flex-wrap: wrap;
       justify-content: space-evenly;
+
       .partner {
         width: 86px;
+
         &:nth-child(3n) {
           width: 100%;
           margin: 0;
+
           img {
 
             margin: 0 0 0 50%;
@@ -1997,13 +2128,15 @@ footer {
           }
         }
       }
-      
+
     }
   }
+
   .work_gallery {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(4, 1fr);
+
     .work_overlay {
       display: none;
     }
@@ -2015,36 +2148,45 @@ footer {
       justify-content: center;
     }
   }
+
   .work_gallery {
     .work_img {
       height: 137px;
+
       img {
         height: 137px;
       }
     }
+
     .wide {
       grid-row: span 2;
       height: 274px;
+
       img {
         height: 100%;
       }
     }
+
     .work_overlay {
       display: none;
     }
   }
+
   .repeated {
     margin: 58px auto 0px;
+
     .review_main {
       display: flex;
       flex-direction: column;
     }
+
     img {
       display: block;
     }
   }
 }
 
+// //////////////////////////////////////////////////////////////
 
 @media (max-width: 320px) {
   %start_style {
@@ -2053,129 +2195,187 @@ footer {
       margin-top: 0;
     }
   }
+
   .main_bunner {
     .main_content {
       width: 100%;
     }
+
     .main_text {
       h2 {
         font-size: 36px;
       }
+
       h1 {
         padding: 0;
       }
+
       button {
-        width: 284px;
+        width: 280px;
         height: 53px;
       }
     }
+
     .main_slider {
       width: 100%;
+
       .main_slider_part {
-        p {display: none;}
+        p {
+          display: none;
+        }
+
         width: 57px;
         height: 42px;
       }
     }
   }
+
   .team {
     height: 258px;
   }
+
+
   .overlay_content {
     position: relative;
     font-size: 18px;
     padding: 0;
     margin-top: 20px;
   }
+
   .services {
     margin: 72px auto 58px;
+
     .amazing_direction {
       margin: 0;
     }
   }
+
   .review_main {
     width: 100%;
+
     div {
       margin-left: 0;
+
       .review_data {
         font-size: 18px;
       }
+
       p {
         font-size: 14px;
       }
     }
   }
+
   .about_img {
     height: 236px;
+
     img {
       transform: translateY(-20%);
     }
   }
+
   .about_overlay {
     height: 236px;
+
     .about_overlay_content {
-     margin: 68%  0 0 21%;
+      margin: 68% 0 0 21%;
     }
   }
+
   .review_main {
     div {
       margin-bottom: 30px;
     }
   }
+
   .happy_clients_page {
     .clients {
       width: 100%;
+
       .client_description {
         display: flex;
         flex-direction: column;
       }
     }
   }
+
   .client_text {
     width: 100%;
     margin-left: 0;
   }
+
   .stories_page {
+    margin-bottom: 0;
+
     .stories_group {
       .story {
         width: 288px;
       }
     }
   }
+
   .story_date {
     p {
       left: 0;
       font-size: 14px;
       width: 67px;
       height: 67px;
+
       span {
         font-size: 24px;
       }
     }
+
     img {
       width: 100%;
     }
   }
+
   .story_reactions {
     margin-bottom: 30px;
   }
+
+  .contacts_footer {
+    .form_footer {
+      display: flex;
+      flex-direction: column;
+
+      input {
+        margin-bottom: 24px;
+        width: 100%;
+        height: 37px;
+        border: 1px solid #C6CBCD;
+      }
+
+      button {
+        width: 100%;
+        height: 37px;
+      }
+    }
+  }
+
   .blog {
     img {
       width: 83px;
       height: 71px;
+      margin-right: 14px;
     }
+
     .blog_text {
       p {
         line-height: 22px;
       }
+
       .blog_txt {
         line-height: 16px;
       }
     }
   }
+
   .instagram_footer {
-      text-align: center;
+    text-align: center;
   }
+
   .footer_copyright {
     margin: 0 auto;
     font-size: 13px;

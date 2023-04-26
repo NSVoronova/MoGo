@@ -64,6 +64,10 @@
   box-sizing: border-box;
 }
 
+input:focus {
+  outline: none;
+}
+
 body {
   background-color: #FFFFFF;
 }
@@ -110,26 +114,26 @@ h5 {
   font-size: 24px;
 }
 
-.map_page h2, .stories_page h2, .happy_clients_page h2, .work_page h2, .service_page h2, .devices_page h2, .amazing_page h2, .about_page h2 {
+.map_page h2, .stories_page h2, .happy_clients_page h2, .work_page h2, .about_page h2, .service_page h2, .devices_page h2, .amazing_page h2, .about_team_page h2 {
   font-size: 30px;
   height: 80px;
   margin-top: 42px;
   text-align: center;
 }
-.map_page h4, .stories_page h4, .happy_clients_page h4, .work_page h4, .service_page h4, .devices_page h4, .amazing_page h4, .about_page h4 {
+.map_page h4, .stories_page h4, .happy_clients_page h4, .work_page h4, .about_page h4, .service_page h4, .devices_page h4, .amazing_page h4, .about_team_page h4 {
   font-size: 36px;
   height: 81px;
   text-transform: uppercase;
   padding-top: 20px;
   text-align: center;
 }
-.map_page .divider, .stories_page .divider, .happy_clients_page .divider, .work_page .divider, .service_page .divider, .devices_page .divider, .amazing_page .divider, .about_page .divider {
+.map_page .divider, .stories_page .divider, .happy_clients_page .divider, .work_page .divider, .about_page .divider, .service_page .divider, .devices_page .divider, .amazing_page .divider, .about_team_page .divider {
   height: 24px;
   width: 170px;
   border-bottom: 4px solid #F38281;
   margin: 0 auto;
 }
-.map_page .page_text, .stories_page .page_text, .happy_clients_page .page_text, .work_page .page_text, .service_page .page_text, .devices_page .page_text, .amazing_page .page_text, .about_page .page_text {
+.map_page .page_text, .stories_page .page_text, .happy_clients_page .page_text, .work_page .page_text, .about_page .page_text, .service_page .page_text, .devices_page .page_text, .amazing_page .page_text, .about_team_page .page_text {
   padding-top: 40px;
   margin-bottom: 42px;
 }
@@ -138,11 +142,16 @@ h5 {
   width: 100%;
 }
 
+.main_logo {
+  cursor: pointer;
+}
+
 .burger_menu {
   display: none;
 }
 
-#burger, [for=burger] {
+#burger,
+[for=burger] {
   display: none;
 }
 
@@ -214,6 +223,7 @@ h5 {
 .main_bunner header nav a:hover {
   border-bottom: 1px solid #F4BF87;
   color: #F4BF87;
+  transition: all 0.3s ease-out;
 }
 .main_bunner .main_text {
   position: relative;
@@ -244,6 +254,7 @@ h5 {
   cursor: pointer;
   background-color: #FFFFFF;
   color: #E4BE8D;
+  transition: all 0.5s ease-out;
 }
 .main_bunner .main_text button:active {
   border: 4px solid #E4BE8D;
@@ -258,6 +269,10 @@ h5 {
   height: 85px;
   border-top: 4px solid #FFFFFF;
   padding-top: 1em;
+  cursor: pointer;
+}
+.main_bunner .main_slider .main_slider_part:first-child {
+  border-top: 4px solid #F38281;
 }
 .main_bunner .main_slider .main_slider_part p {
   font-family: "Raleway", sans-serif;
@@ -270,12 +285,12 @@ h5 {
   font-size: 36px;
 }
 
-.about_page {
+.about_team_page {
   max-width: 1170px;
   text-align: center;
   margin: 0 auto;
 }
-.about_page .about_teams {
+.about_team_page .about_teams {
   max-width: 100%;
   display: flex;
   justify-content: space-between;
@@ -292,7 +307,7 @@ h5 {
   width: 100%;
   height: 100%;
   overflow: hidden;
-  background-color: #95E1D3;
+  cursor: pointer;
 }
 .team_image img {
   display: block;
@@ -302,10 +317,14 @@ h5 {
      object-fit: cover;
 }
 
-.team_image:hover .team_pic {
-  display: none;
+@media (min-width: 1024px) {
+  .team_image:hover {
+    background-color: #95E1D3;
+  }
+  .team_image:hover .team_pic {
+    display: none;
+  }
 }
-
 .image_overlay {
   position: absolute;
   top: 0;
@@ -323,7 +342,7 @@ h5 {
   opacity: 1;
   z-index: 3;
   width: 100%;
-  height: 100%;
+  transition: all 0.3s ease-out;
 }
 
 .overlay_content {
@@ -563,6 +582,7 @@ h5 {
 
 .drop_input:checked ~ .drop_title img {
   transform: rotate(180deg);
+  transition: all 0.5s ease-out;
 }
 
 .drop {
@@ -689,6 +709,8 @@ h5 {
 }
 
 .about_overlay_content {
+  display: flex;
+  justify-content: center;
   margin: 55% auto;
 }
 .about_overlay_content [class^=icon-]::before,
@@ -697,7 +719,7 @@ h5 {
   font-size: 42px;
   color: #F38281;
   background-color: #F9EFCF;
-  margin: -1px;
+  margin: 2px;
 }
 .about_overlay_content [class^=icon-]:hover::before,
 .about_overlay_content [class*=" icon-"]:hover::before {
@@ -716,6 +738,11 @@ h5 {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  cursor: pointer;
+}
+.partners_page .partner_container .partner:hover {
+  transform: scale(1.5, 1.5);
+  transition: all 0.5s ease-out;
 }
 
 .work_page {
@@ -869,7 +896,7 @@ h5 {
 
 .stories_page {
   max-width: 1170px;
-  margin: 0 auto;
+  margin: 0 auto 84px;
 }
 .stories_page .stories_group {
   display: flex;
@@ -1178,6 +1205,7 @@ footer {
   }
   .main_bunner,
   .about_page,
+  .about_team_page,
   .services,
   .service_page,
   .reviews_page,
@@ -1197,66 +1225,83 @@ footer {
     font-size: 48px;
     margin-bottom: 0;
   }
-  .about_page .about_page h2, .about_page .amazing_page h2, .about_page .devices_page h2, .about_page .service_page h2, .about_page .work_page h2, .about_page .happy_clients_page h2, .about_page .stories_page h2, .about_page .map_page h2,
+  .about_page .about_team_page h2, .about_page .amazing_page h2, .about_page .devices_page h2, .about_page .service_page h2, .about_page .about_page h2, .about_page .work_page h2, .about_page .happy_clients_page h2, .about_page .stories_page h2, .about_page .map_page h2,
   .about_page h4,
-  .amazing_page .about_page h2,
+  .about_team_page .about_team_page h2,
+  .about_team_page .amazing_page h2,
+  .about_team_page .devices_page h2,
+  .about_team_page .service_page h2,
+  .about_team_page .about_page h2,
+  .about_team_page .work_page h2,
+  .about_team_page .happy_clients_page h2,
+  .about_team_page .stories_page h2,
+  .about_team_page .map_page h2,
+  .about_team_page h4,
+  .amazing_page .about_team_page h2,
   .amazing_page .amazing_page h2,
   .amazing_page .devices_page h2,
   .amazing_page .service_page h2,
+  .amazing_page .about_page h2,
   .amazing_page .work_page h2,
   .amazing_page .happy_clients_page h2,
   .amazing_page .stories_page h2,
   .amazing_page .map_page h2,
   .amazing_page h4,
-  .service_page .about_page h2,
+  .service_page .about_team_page h2,
   .service_page .amazing_page h2,
   .service_page .devices_page h2,
   .service_page .service_page h2,
+  .service_page .about_page h2,
   .service_page .work_page h2,
   .service_page .happy_clients_page h2,
   .service_page .stories_page h2,
   .service_page .map_page h2,
   .service_page h4,
-  .devices_page .about_page h2,
+  .devices_page .about_team_page h2,
   .devices_page .amazing_page h2,
   .devices_page .devices_page h2,
   .devices_page .service_page h2,
+  .devices_page .about_page h2,
   .devices_page .work_page h2,
   .devices_page .happy_clients_page h2,
   .devices_page .stories_page h2,
   .devices_page .map_page h2,
   .devices_page h4,
-  .work_page .about_page h2,
+  .work_page .about_team_page h2,
   .work_page .amazing_page h2,
   .work_page .devices_page h2,
   .work_page .service_page h2,
+  .work_page .about_page h2,
   .work_page .work_page h2,
   .work_page .happy_clients_page h2,
   .work_page .stories_page h2,
   .work_page .map_page h2,
   .work_page h4,
-  .happy_clients_page .about_page h2,
+  .happy_clients_page .about_team_page h2,
   .happy_clients_page .amazing_page h2,
   .happy_clients_page .devices_page h2,
   .happy_clients_page .service_page h2,
+  .happy_clients_page .about_page h2,
   .happy_clients_page .work_page h2,
   .happy_clients_page .happy_clients_page h2,
   .happy_clients_page .stories_page h2,
   .happy_clients_page .map_page h2,
   .happy_clients_page h4,
-  .stories_page .about_page h2,
+  .stories_page .about_team_page h2,
   .stories_page .amazing_page h2,
   .stories_page .devices_page h2,
   .stories_page .service_page h2,
+  .stories_page .about_page h2,
   .stories_page .work_page h2,
   .stories_page .happy_clients_page h2,
   .stories_page .stories_page h2,
   .stories_page .map_page h2,
   .stories_page h4,
-  .map_page .about_page h2,
+  .map_page .about_team_page h2,
   .map_page .amazing_page h2,
   .map_page .devices_page h2,
   .map_page .service_page h2,
+  .map_page .about_page h2,
   .map_page .work_page h2,
   .map_page .happy_clients_page h2,
   .map_page .stories_page h2,
@@ -1265,6 +1310,7 @@ footer {
     font-size: 24px;
   }
   .about_page h2,
+  .about_team_page h2,
   .amazing_page h2,
   .service_page h2,
   .devices_page h2,
@@ -1275,6 +1321,7 @@ footer {
     margin-top: 0;
   }
   .about_page h5,
+  .about_team_page h5,
   .amazing_page h5,
   .service_page h5,
   .devices_page h5,
@@ -1285,6 +1332,7 @@ footer {
     font-size: 14px;
   }
   .about_page .divider,
+  .about_team_page .divider,
   .amazing_page .divider,
   .service_page .divider,
   .devices_page .divider,
@@ -1510,7 +1558,7 @@ footer {
   nav {
     position: fixed;
   }
-  a {
+  nav a {
     transform: scale(-1, 1);
   }
   .main_bunner header nav {
@@ -1519,6 +1567,24 @@ footer {
   }
   .main_bunner header .menu {
     position: fixed;
+  }
+  .image_overlay {
+    position: absolute;
+    top: 67%;
+    left: 0;
+    transform: none;
+    width: 100%;
+    height: 33%;
+    opacity: 2;
+  }
+  .overlay_content {
+    display: flex;
+    justify-content: flex-start;
+    text-align: left;
+    bottom: 20px;
+  }
+  .overlay_content img {
+    margin: 20px;
   }
   .services {
     display: flex;
@@ -1558,6 +1624,7 @@ footer {
   }
   .stories_page {
     padding: 0 16px;
+    margin-bottom: 25px;
   }
   .stories_page .stories_group {
     display: flex;
@@ -1594,7 +1661,7 @@ footer {
   }
 }
 @media (max-width: 550px) {
-  .about_page h2, .amazing_page h2, .devices_page h2, .service_page h2, .work_page h2, .happy_clients_page h2, .stories_page h2, .map_page h2 {
+  .about_team_page h2, .amazing_page h2, .devices_page h2, .service_page h2, .about_page h2, .work_page h2, .happy_clients_page h2, .stories_page h2, .map_page h2 {
     margin-top: 29px;
   }
   .main_bunner .main_text h1 {
@@ -1611,35 +1678,17 @@ footer {
   .main_bunner header .main_logo img {
     height: 14px;
   }
-  .about_page .about_teams {
+  .about_team_page .about_teams {
     display: flex;
     flex-direction: column;
   }
-  .about_page .about_teams:last-child {
+  .about_team_page .about_teams:last-child {
     margin-bottom: 59px;
   }
   .team {
     width: 100%;
     height: 400px;
     margin-bottom: 16px;
-  }
-  .image_overlay {
-    position: absolute;
-    top: 67%;
-    left: 0;
-    transform: none;
-    width: 100%;
-    height: 33%;
-    opacity: 2;
-  }
-  .overlay_content {
-    display: flex;
-    justify-content: flex-start;
-    text-align: left;
-    bottom: 20px;
-  }
-  .overlay_content img {
-    margin: 20px;
   }
   .futures_page .futures_container {
     width: 100%;
@@ -1685,6 +1734,10 @@ footer {
   .reviews_page .reviews .arrow_down img {
     display: none;
   }
+  .review_main .review_data h2 {
+    font-size: 18px;
+    margin-left: 28px;
+  }
   .review_main img {
     display: none;
   }
@@ -1698,6 +1751,9 @@ footer {
     display: block;
     width: 9.5px;
     height: 9.5px;
+  }
+  .review_main div .slider_dots img:hover {
+    cursor: pointer;
   }
   .about_img {
     height: 355px;
@@ -1721,7 +1777,6 @@ footer {
     transform: translateX(-50%);
   }
   .about_overlay .about_overlay_content {
-    margin-right: 50%;
     opacity: 2;
     width: 100%;
     height: 42px;
@@ -1786,7 +1841,7 @@ footer {
   }
 }
 @media (max-width: 320px) {
-  .about_page h2, .amazing_page h2, .devices_page h2, .service_page h2, .work_page h2, .happy_clients_page h2, .stories_page h2, .map_page h2 {
+  .about_team_page h2, .amazing_page h2, .devices_page h2, .service_page h2, .about_page h2, .work_page h2, .happy_clients_page h2, .stories_page h2, .map_page h2 {
     font-size: 24px;
     margin-top: 0;
   }
@@ -1800,7 +1855,7 @@ footer {
     padding: 0;
   }
   .main_bunner .main_text button {
-    width: 284px;
+    width: 280px;
     height: 53px;
   }
   .main_bunner .main_slider {
@@ -1866,6 +1921,9 @@ footer {
     width: 100%;
     margin-left: 0;
   }
+  .stories_page {
+    margin-bottom: 0;
+  }
   .stories_page .stories_group .story {
     width: 288px;
   }
@@ -1884,9 +1942,24 @@ footer {
   .story_reactions {
     margin-bottom: 30px;
   }
+  .contacts_footer .form_footer {
+    display: flex;
+    flex-direction: column;
+  }
+  .contacts_footer .form_footer input {
+    margin-bottom: 24px;
+    width: 100%;
+    height: 37px;
+    border: 1px solid #C6CBCD;
+  }
+  .contacts_footer .form_footer button {
+    width: 100%;
+    height: 37px;
+  }
   .blog img {
     width: 83px;
     height: 71px;
+    margin-right: 14px;
   }
   .blog .blog_text p {
     line-height: 22px;
