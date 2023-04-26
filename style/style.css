@@ -67,6 +67,9 @@
 body {
   background-color: #FFFFFF;
 }
+body .wrapper {
+  overflow-x: hidden;
+}
 
 h1 {
   font-family: "Montserrat", sans-serif;
@@ -871,7 +874,7 @@ h5 {
 .stories_page .stories_group {
   display: flex;
   justify-content: space-between;
-  margin: 42px auto;
+  margin: 42px auto 0px;
 }
 .stories_page .stories_group .story {
   width: 370px;
@@ -1464,7 +1467,7 @@ footer {
     width: 48px;
     text-align: center;
     margin-top: 10px;
-    margin-right: 20px;
+    margin-right: 0px;
   }
   [for=burger]::before {
     content: url(../images/menu.svg);
@@ -1481,13 +1484,17 @@ footer {
     background-image: url(../images/banner.jpg);
     background-size: cover;
     background-position-x: center;
+    background-position-y: 85%;
     position: absolute;
     z-index: 2;
-    top: 65px;
+    top: 14vw;
     right: -17px;
     width: 100vw;
     height: 574px;
     transform: scale(-1, 1);
+  }
+  #burger:checked + label + nav .hidden {
+    opacity: 0;
   }
   #burger:checked + label + nav::before {
     content: "";

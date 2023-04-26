@@ -76,6 +76,9 @@
 
 body {
   background-color: #FFFFFF;
+  .wrapper {
+    overflow-x: hidden;
+  }
 }
 
 h1 {
@@ -991,7 +994,7 @@ $seawave_color: #95E1D3;
   .stories_group {
     display: flex;
     justify-content: space-between;
-    margin: 42px auto;
+    margin: 42px auto 0px;
 
     .story {
       width: 370px;
@@ -1660,7 +1663,7 @@ footer {
     width: 48px;
     text-align: center;
     margin-top: 10px;
-    margin-right: 20px;
+    margin-right: 0px;
   }
 
   [for=burger]::before {
@@ -1680,13 +1683,17 @@ footer {
     background-image: url(../images/banner.jpg);
     background-size: cover;
     background-position-x: center;
+    background-position-y: 85%;
     position: absolute;
     z-index: 2;
-    top: 65px;
+    top: 14vw;
     right: -17px;
     width: 100vw;
     height: 574px;
     transform: scale(-1, 1);
+    .hidden {
+      opacity: 0;
+    }
     &::before {
       content: '';
       position: absolute;
